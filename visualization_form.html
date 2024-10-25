@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('/static/pexels-alesiakozik-6770610.jpg'); /* Path to static file */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif; /* Modern font */
+            color: #ffffff; /* Text color to contrast with background */
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #ffffff; /* White color for the heading */
+            font-size: 2em; /* Larger font size for the heading */
+        }
+        form {
+            display: flex;
+            flex-direction: column; /* Stack form elements vertically */
+            align-items: flex-start; /* Align items to the start */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the form */
+            padding: 20px; /* Padding around the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+        label {
+            font-size: 16px; /* Slightly larger font size */
+            margin: 10px 0 5px;
+            color: #343a40; /* Dark gray for labels */
+        }
+        select, input {
+            padding: 10px;
+            margin-bottom: 15px; /* Space between inputs */
+            width: 220px; /* Consistent width */
+            border: 1px solid #ced4da; /* Light gray border */
+            border-radius: 5px; /* Rounded corners */
+            transition: border-color 0.3s; /* Smooth transition for focus */
+        }
+        select:focus, input:focus {
+            border-color: #80bdff; /* Light blue border on focus */
+            outline: none; /* Remove default outline */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition */
+            width: 100%; /* Make button full width */
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        a {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff; /* Bootstrap primary color */
+            font-weight: bold; /* Bold link */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Generate Visualizations</h2>
+    <form action="/visualization" method="POST">
+        <label for="x_axis">X-axis:</label>
+        <select id="x_axis" name="x_axis" required>
+            <option value="Open">Open Price</option>
+            <option value="High">High Price</option>
+            <option value="Low">Low Price</option>
+            <option value="Close">Close Price</option>
+            <option value="Adj Close">Adjusted Close Price</option>
+            <option value="Volume">Volume</option>
+            <option value="Price_Change">Price Change</option>
+        </select>
+
+        <label for="y_axis">Y-axis:</label>
+        <select id="y_axis" name="y_axis" required>
+            <option value="Open">Open Price</option>
+            <option value="High">High Price</option>
+            <option value="Low">Low Price</option>
+            <option value="Close">Close Price</option>
+            <option value="Adj Close">Adjusted Close Price</option>
+            <option value="Volume">Volume</option>
+            <option value="Price_Change">Price Change</option>
+        </select>
+
+        <label for="graph_type">Graph Type:</label>
+        <select id="graph_type" name="graph_type" required>
+            <option value="scatter">Scatter</option>
+            <option value="line">Line</option>
+            <option value="histogram">Histogram</option>
+            <option value="boxplot">Boxplot</option>
+        </select>
+
+        <label for="start_year">Start Year:</label>
+        <input type="number" id="start_year" name="start_year" required>
+
+        <label for="end_year">End Year:</label>
+        <input type="number" id="end_year" name="end_year" required>
+
+        <button type="submit">Generate Visualization</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

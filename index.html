@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Predictor</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('/static/pexels-anna-nekrashevich-6801648.jpg'); /* Path to the static image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            color: white; /* Default text color */
+        }
+        h1 {
+            margin-bottom: 50px;
+            color: black; /* Set the title color to black */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Optional white shadow for text visibility */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            background-color: rgba(30, 58, 138, 0.8); /* Dark Blue with some transparency */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgba(13, 42, 92, 0.8); /* Darker Blue with transparency */
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Market Change Predictor</h1>
+    <a href="/prediction"><button>Prediction</button></a>
+    <a href="/visualization"><button>Visualization</button></a>
+</body>
+</html>
